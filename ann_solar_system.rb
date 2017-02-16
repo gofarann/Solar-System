@@ -1,3 +1,5 @@
+require "colorize"
+
 class Planet
   attr_accessor :name, :diameter, :moon, :orbit_period, :orbit_distance, :mass
 
@@ -195,7 +197,7 @@ class Solarsystem
         :distance_from_sun => nil}
         puts "okay, I need more information from you"
         new_planet.each do |key, value|
-          puts "what's #{name_var}'s #{key}:"
+          puts "what's #{name_var}'s #{key}:".colorize(:red)
           user_input = gets.chomp
           new_planet[key] = user_input
         end
